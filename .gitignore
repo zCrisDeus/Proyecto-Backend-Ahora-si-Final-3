@@ -1,0 +1,22 @@
+# Entorno, credenciales y datos privados
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite3
+*.sql
+*.dump
+media/
+staticfiles/
+.aws/
+.DS_Store
+private-mail/
+test-results/

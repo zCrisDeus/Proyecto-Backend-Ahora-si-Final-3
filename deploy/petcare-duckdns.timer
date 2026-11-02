@@ -1,0 +1,8 @@
+[Unit]
+Description=Update PetCare DuckDNS at boot and every five minutes
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=5min
+Unit=petcare-duckdns.service
+[Install]
+WantedBy=timers.target

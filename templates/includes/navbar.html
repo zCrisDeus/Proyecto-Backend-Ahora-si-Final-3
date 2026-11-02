@@ -1,0 +1,15 @@
+<div class="care-strip">Un espacio para cuidar a quienes más quieres <i class="bi bi-heart" aria-hidden="true"></i></div>
+<nav class="navbar navbar-expand-xl navbar-custom" aria-label="Navegación principal"><div class="container">
+<a class="navbar-brand brand" href="{% url 'home' %}"><i class="bi bi-heart-pulse-fill" aria-hidden="true"></i> PetCare<span></span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav mx-auto"><li class="nav-item"><a class="nav-link" href="{% url 'cuenta' %}">Mi espacio</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'tutores' %}">Tutores</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'mascotas' %}">Mascotas</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'citas' %}">Citas</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'profesionales' %}">Profesionales</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'fichas' %}">Fichas</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'recordatorios' %}">Recordatorios</a></li>
+<li class="nav-item admin-entry"><a class="nav-link" href="{% url 'admin:index' %}"><i class="bi bi-shield-lock" aria-hidden="true"></i> Django Admin</a></li></ul>
+<div class="d-flex align-items-center gap-2"><button id="theme-toggle" class="theme-button" type="button" aria-label="Cambiar tema" aria-pressed="false"><i class="bi bi-moon" id="theme-icon" aria-hidden="true"></i></button><a href="{% url 'login' %}" id="account-link" class="btn btn-custom btn-sm">Acceder <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a><button id="logout-button" class="btn btn-outline-secondary btn-sm" hidden>Salir</button></div>
+</div></div></nav>

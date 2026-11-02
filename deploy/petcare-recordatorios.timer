@@ -1,0 +1,11 @@
+[Unit]
+Description=Check PetCare reminders every five minutes
+
+[Timer]
+OnCalendar=*:0/5
+Persistent=true
+RandomizedDelaySec=15
+Unit=petcare-recordatorios.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,10 @@
+# Versiones observadas en el entorno local original.
+Django==6.1.2
+djangorestframework==3.18.3
+djangorestframework-simplejwt==5.5.1
+django-cors-headers==4.9.0
+drf-yasg==1.21.18
+psycopg2-binary==2.9.13
+# Versiones verificadas por SSH en la instancia EC2.
+whitenoise==6.12.0
+gunicorn==26.2.0; sys_platform != "win32"

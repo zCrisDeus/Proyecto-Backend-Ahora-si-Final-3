@@ -1,0 +1,16 @@
+[Unit]
+Description=PetCare reminder simulation
+Requires=petcare.service
+After=petcare.service postgresql.service
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/Proyecto-back-end-3-eva
+EnvironmentFile=/etc/petcare.env
+Environment=PETCARE_PUBLIC_IP_FILE=/run/petcare/public-ip
+UMask=0077
+ExecStart=/home/ubuntu/Proyecto-back-end-3-eva/venv/bin/python manage.py enviar_recordatorios --simular
+NoNewPrivileges=true
+PrivateTmp=true

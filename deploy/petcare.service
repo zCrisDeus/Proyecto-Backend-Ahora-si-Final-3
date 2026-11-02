@@ -1,0 +1,24 @@
+[Unit]
+Description=PetCare application
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/Proyecto-back-end-3-eva
+EnvironmentFile=/etc/petcare.env
+Environment=PETCARE_PUBLIC_IP_FILE=/run/petcare/public-ip
+RuntimeDirectory=petcare
+RuntimeDirectoryMode=0750
+UMask=0077
+ExecStartPre=/usr/bin/python3 /home/ubuntu/Proyecto-back-end-3-eva/deploy/ec2_public_ip.py --output /run/petcare/public-ip
+ExecStart=/home/ubuntu/Proyecto-back-end-3-eva/venv/bin/gunicorn petcare_core.wsgi:application --bind 127.0.0.1:8000 --workers 2 --access-logfile - --error-logfile -
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Update PetCare DuckDNS from EC2 public IP
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=/etc/petcare-duckdns.json
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/sbin/petcare_duckdns.py
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true

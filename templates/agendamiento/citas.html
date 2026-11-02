@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Agenda de citas · PetCare{% endblock %}
+{% block content %}
+<header class="page-heading"><div><p class="eyebrow">SU BIENESTAR, EN CADA DETALLE</p><h1>Agenda de citas</h1><p>Cada visita, organizada en un mismo lugar.</p></div><a href="{% url 'admin:agendamiento_citamedica_add' %}" class="btn btn-custom"><i class="bi bi-plus-lg" aria-hidden="true"></i> Agendar cita</a></header>
+<section class="card-custom" aria-label="Listado de agenda de citas" data-module="citas"><div class="list-toolbar"><span id="record-count" class="auth-help" aria-live="polite">Consultando registros…</span><div class="search-wrap"><i class="bi bi-search" aria-hidden="true"></i><label for="list-search" class="visually-hidden">Buscar en el listado</label><input class="form-control" type="search" id="list-search" placeholder="Buscar en este listado" disabled></div></div><div class="table-responsive"><table class="table align-middle"><caption class="visually-hidden">Agenda de citas</caption><thead id="list-head"></thead><tbody id="list-body"><tr><td class="list-message" role="status">Cargando…</td></tr></tbody></table></div></section>
+<p class="admin-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Para crear, editar o eliminar registros, utiliza <a href="{% url 'admin:agendamiento_citamedica_changelist' %}">Administración</a> con una cuenta autorizada. El acceso administrativo requiere su propia sesión.</p>
+{% endblock %}
+{% block scripts %}<script src="{% static 'petcare/lists.js' %}"></script>{% endblock %}

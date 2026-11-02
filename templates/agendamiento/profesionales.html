@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Nuestro equipo · PetCare{% endblock %}
+{% block content %}
+<header class="page-heading"><div><p class="eyebrow">SU BIENESTAR, EN CADA DETALLE</p><h1>Nuestro equipo</h1><p>Profesionales que acompañan el cuidado de cada paciente.</p></div><a href="{% url 'admin:agendamiento_profesional_add' %}" class="btn btn-custom"><i class="bi bi-plus-lg" aria-hidden="true"></i> Nuevo profesional</a></header>
+<section class="card-custom" aria-label="Listado de nuestro equipo" data-module="profesionales"><div class="list-toolbar"><span id="record-count" class="auth-help" aria-live="polite">Consultando registros…</span><div class="search-wrap"><i class="bi bi-search" aria-hidden="true"></i><label for="list-search" class="visually-hidden">Buscar en el listado</label><input class="form-control" type="search" id="list-search" placeholder="Buscar en este listado" disabled></div></div><div class="table-responsive"><table class="table align-middle"><caption class="visually-hidden">Nuestro equipo</caption><thead id="list-head"></thead><tbody id="list-body"><tr><td class="list-message" role="status">Cargando…</td></tr></tbody></table></div></section>
+<p class="admin-note"><i class="bi bi-info-circle" aria-hidden="true"></i> Para crear, editar o eliminar registros, utiliza <a href="{% url 'admin:agendamiento_profesional_changelist' %}">Administración</a> con una cuenta autorizada. El acceso administrativo requiere su propia sesión.</p>
+{% endblock %}
+{% block scripts %}<script src="{% static 'petcare/lists.js' %}"></script>{% endblock %}
